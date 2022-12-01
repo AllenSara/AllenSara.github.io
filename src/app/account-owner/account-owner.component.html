@@ -1,0 +1,26 @@
+<h1>Personal Details</h1>
+<fieldset>
+    <img [src]="(editOwner.hasPicture)?'assets/images/'+editOwner.tz+'.png':'assets/images/noImage.png'" height="80" >
+    <div>
+        <label for=name>Name: </label>
+        <input required type=text id=name [(ngModel)]="editOwner.name" [disabled]="!editAccountOwner">
+        <br>
+        <label for=adrs>Address: </label>
+        <input required type=text id=adrs [(ngModel)]="editOwner.address" [disabled]="!editAccountOwner">
+        <br>
+        <label for=tzNum>Identity Number: </label>
+        <input type=number id=tzNum value={{editOwner.tz}} disabled>
+        <br>
+        <label for=pic>Picture? </label>
+        <input type=checkbox id=pic [(ngModel)]="editOwner.hasPicture" [disabled]="!editAccountOwner">
+        <br>
+    </div>
+    <br />
+    <button (click)="editAccountOwner=!editAccountOwner; saveAccountOwner()">
+        {{(!editAccountOwner)?"Edit":"Save Changes"}}
+    </button>&nbsp;&nbsp;
+    <button *ngIf="editAccountOwner" (click)="editAccountOwner=!editAccountOwner; cancel()">
+        Cancel
+    </button>
+    <br>
+</fieldset>

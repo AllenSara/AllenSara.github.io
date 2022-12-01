@@ -1,0 +1,15 @@
+<div *ngIf="showMenu()">
+    <div class="upper">
+        <p>Hello, {{getName()}}</p>
+        <p [class.minus]='getBalance()<0'>Balance: {{getBalance() | currency:'ILS'}}</p>
+    </div>
+    <nav>
+        <br>
+        <a (click)="logOut()" routerLink="/AccountLogin">Logout</a>
+        <a routerLink="/ChangePassword"> | Change Password</a>
+        <a routerLink="/AccountOwner"> | Personal Details</a>
+        <a routerLink="/BankAccountDetails"> | Bank Account Details</a>
+        <a routerLink="/BankAccount"> | Make a Transaction</a>
+        <a routerLink="/AllTransactions"> | View All Transactions</a>
+    </nav>
+</div>

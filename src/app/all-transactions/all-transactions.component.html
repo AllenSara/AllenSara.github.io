@@ -1,0 +1,22 @@
+<h1>Transactions</h1>
+<fieldset>
+  <div>
+      <table *ngIf="getArraySize()>0">
+        <tr class="mytable">
+          <th>Serial Number</th>
+          <th>Date Added</th> 
+          <th>Amount</th>
+          <th>Type of Transaction</th>
+          <th>Balance After Transaction</th>
+        </tr>
+        <tr *ngFor="let a of getTransactions()" [class.red]="a.currentBalance<0" [class.mytable]="a.currentBalance>=0"> 
+          <td><a routerLink="/ThisTransaction/{{a.mispars}}">{{a.mispars}}</a></td>
+          <td>{{a.trnDate | date:'dd/MM/yyyy'}}</td>
+          <td>{{a.amount | currency:'ILS'}}</td>
+          <td>{{transactionTypeNames[a.trnTyp]}}</td>
+          <td>{{a.currentBalance | currency:'ILS'}}</td>
+        </tr>
+      </table>
+      <p *ngIf ="getArraySize()==0" class="yellow">No transactions were found in this account.</p>
+  </div>
+</fieldset>

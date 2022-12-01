@@ -1,0 +1,27 @@
+<h1>Transaction Number {{currentTransaction.mispars}}</h1>
+<fieldset>
+  <div>
+      <table>
+        <tr>
+          <th>Serial Number</th>
+          <th>Date Added</th> 
+          <th>Amount</th>
+          <th>Type of Transaction</th>
+          <th>Balance After Transaction</th>
+          <th>Reference</th>
+          <th>Notes</th>
+        </tr>
+        <tr>
+          <td>{{currentTransaction.mispars}}</td>
+          <td>{{currentTransaction.trnDate | date:'dd/MM/yyyy'}}</td>
+          <td>{{currentTransaction.amount | currency:'ILS'}}</td>
+          <td>{{transactionTypeNames[currentTransaction.trnTyp]}}</td>
+          <td>{{currentTransaction.currentBalance | currency:'ILS'}}</td>
+          <td>{{currentTransaction.asmachta}}</td>
+          <td>{{currentTransaction.note}}</td>
+        </tr>
+      </table>
+  </div><br>
+  <button type=button (click)="delete()">Delete</button>&nbsp;&nbsp; 
+  <button type=button (click)="goToTransactions()">Return to All Transactions</button>
+</fieldset>

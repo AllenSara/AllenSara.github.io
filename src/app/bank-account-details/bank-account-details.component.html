@@ -1,0 +1,22 @@
+<h1>Account Details</h1>
+<fieldset>
+    <label>Bank: </label>
+    <span>{{account.bankName}}</span>
+    <div>
+        <label for=name>Branch Name: </label>
+        <input required type=text id=name [(ngModel)]="editBankDetails.branchName" [disabled]="!editAccountDetails">
+        <br>
+        <label for=bnumber>Branch Number: </label>
+        <input required type=number id=bnumber [(ngModel)]="editBankDetails.branchNumber" [disabled]="!editAccountDetails">
+        <br>
+        <label for=anumber>Account Number: </label>
+        <input required type=number id=anumber [(ngModel)]="editBankDetails.accountNumber" [disabled]="!editAccountDetails">
+        <br><br>
+    </div>
+    <button (click)="editAccountDetails=!editAccountDetails; saveAccountDetails()">
+        {{(!editAccountDetails)?"Edit":"Save Changes"}}
+    </button>&nbsp;&nbsp;
+    <button *ngIf="editAccountDetails" (click)="editAccountDetails=!editAccountDetails; cancel()">
+        Cancel
+    </button>
+</fieldset>

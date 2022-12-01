@@ -1,0 +1,12 @@
+<h1>Login</h1>
+<div>
+    <fieldset><br>
+        <label for=uid>Email: </label>
+        <input required type="email" id=uid [(ngModel)]="userEmail"><br><br>
+        <label for=pwd>Password: </label>
+        <input required type="password" id=pwd [(ngModel)]="userPwd"><br><br>
+        <input type="button" value="enter" (click)="logIn()"><br>
+        <p>Email: siteAdmin@bigbank.com</p>
+        <p>Password: 1234</p>
+    </fieldset>
+</div>

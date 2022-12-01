@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    font-family: 'Raleway', sans-serif;
+}
+html{
+    background-image: url(src/assets/images/trees.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+button{
+    background-color:whitesmoke!important;
+}
+fieldset {
+    margin: auto;
+    background-color: whitesmoke !important;
+    width: 400px;
+    opacity: 0.9;
+}
+label {
+    font-weight: bold;
+}
+h1,p,div{text-align: center;}
+:invalid{background-color: lightcoral;}
+:valid{background-color: rgb(213, 224, 213);}

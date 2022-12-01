@@ -1,0 +1,28 @@
+<!-- <div id="owner" >
+    <h2>
+        Welcome to the {{accountDetails.bankName}} Branch: {{accountDetails.branchNumber}} {{accountDetails.branchName}} Account#: {{accountDetails.accountNumber}}
+    </h2>
+</div> -->
+<h1>Make a Transaction</h1>
+<fieldset>
+    <div id="transaction"><br>
+        <label for=amount>Amount:</label><br>
+        <input required type=number id=amount min=0 [(ngModel)]="currentAmount"/><br><br>
+        <label for=asmachta>Reference: </label><br>
+        <textarea id=asmachta [(ngModel)]="currentTransactionAsmachta" minlength=4></textarea><br><br>
+        <label for=taarich>Date:</label><br>
+        <input required type=date id=taarich [(ngModel)]="currentTransactionDates"/><br><br>
+        <label for=sugpeula>Type of Transaction: </label><br>
+        <select required id=sugpeula [(ngModel)]="currentTransactionType">
+            <option value="-1" disabled >Please choose a type </option>
+            <option *ngIf="getArraySize()==0" value="0">Open Account</option>
+            <option value="1">Deposit</option>
+            <option *ngIf="getArraySize()>0" value="2">Withdraw</option>
+        </select><br><br>
+        <label for=note>Notes: </label><br>
+        <textarea id=note [(ngModel)]="currentTransactionNote"></textarea><br><br>
+        <button type="button" (click)='doTransaction();'>Run Transaction</button>
+        <p *ngIf="!lastActionFail">{{transaction}}</p>
+        <p *ngIf="lastActionFail" dir="rtl">This transaction was denied due to a limit of {{accountDetails.limit|currency:'ILS'}} on your credit card</p>
+    </div>
+</fieldset>

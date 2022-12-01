@@ -1,0 +1,10 @@
+.upper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Raleway', sans-serif;
+    padding-bottom: 8px;
+    border-bottom: 1px solid grey;
+    font-weight: 300;
+}
+.minus {color:lightcoral;}
